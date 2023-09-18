@@ -1,6 +1,5 @@
 export const useGetUserInfo = () => {
-    const authData = localStorage.getItem("auth");
-    console.log("Raw authData from local storage:", authData);
+    const authData = localStorage.getItem("auth") || {};
   
     if (!authData) {
       // Handle the case where the local storage data is not set yet
