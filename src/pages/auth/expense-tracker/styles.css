@@ -1,57 +1,80 @@
 .expense-tracker {
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: #023047;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #023047;
+  padding: 0 20px; /* Add some padding for smaller screens */
+}
+
+.expense-tracker h1 {
+  font-size: 30px;
+}
+
+.expense-tracker button {
+  margin-left: 10px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px; /* Changed from margin-left to margin-top */
+}
+
+.profile-photo {
+  width: 150px; /* Reduced size for smaller screens */
+  border-radius: 50%;
+}
+
+.sign-out-button {
+  border: none;
+  margin-top: 20px;
+  width: 120px;
+  background: #3498db;
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.sign-out-button:hover {
+  background: #3cb0fd;
+  margin: 5px;
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.transactions {
+  margin: 20px auto;  /* Top and bottom margin set to 20px, left and right set to auto */
+  padding-left: 10px;
+  width: 100%;
+  max-width: 300px;   /* This ensures that the element won't exceed 600px, but will be 100% of the width on smaller screens */
+  height: 400px;
+  overflow: auto;
+  border: 3px solid #023047;
+  box-sizing: border-box;  /* This ensures padding and border are included in the total width */
+}
+
+/* Media Queries for Larger Screens */
+@media (min-width: 768px) {
+  .expense-tracker {
+      flex-direction: row;
   }
-  
-  .expense-tracker h1 {
-    font-size: 40px;
-  }
-  .expense-tracker button {
-    margin-left: 10px;
-  }
+
   .profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 200px;
+      margin-left: 200px;
+      margin-top: 0;
   }
-  .profile-photo {
-    width: 200px;
-    border-radius: 50%;
-  }
-  
-  .sign-out-button {
-    border: none;
-    margin-top: 50px;
-    width: 150px;
-    background: #3498db;
-    background-image: linear-gradient(to bottom, #3498db, #2980b9);
-    border-radius: 10px;
-    color: #ffffff;
-    font-size: 22px;
-    font-weight: bold;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
-  }
-  
-  .sign-out-button:hover {
-    background: #3cb0fd;
-  
-    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
+
+/* Desktop Styles */
   .transactions {
-    margin-left: 430px;
-    margin-top: 20px;
-    padding-left: 10px;
-    width: 600px;
-    height: 400px;
-    overflow: auto;
-    border: 3px solid #023047;
+      margin-left: 430px;  /* Reverting to the original style for desktop */
   }
+
+}
